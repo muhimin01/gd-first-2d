@@ -36,7 +36,6 @@ radius = 54.0
 height = 136.0
 
 [node name="Player" type="Area2D"]
-position = Vector2(254, 360)
 script = ExtResource("1_olmxn")
 metadata/_edit_group_ = true
 
