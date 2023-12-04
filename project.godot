@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="First2DGame"
+config/name="DodgeTheCreeps2D"
+config/version="1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
