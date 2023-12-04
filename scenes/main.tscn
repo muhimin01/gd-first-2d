@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci5x81k62shst"]
+[gd_scene load_steps=7 format=3 uid="uid://ci5x81k62shst"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dgcv3"]
 [ext_resource type="PackedScene" uid="uid://bfp7quto1n5vq" path="res://scenes/mob.tscn" id="2_4ae4r"]
 [ext_resource type="PackedScene" uid="uid://0r705loui7qx" path="res://scenes/player.tscn" id="2_wu7rv"]
+[ext_resource type="Texture2D" uid="uid://cgy1flhviu0ml" path="res://art/moss.jpg" id="3_q7rky"]
 [ext_resource type="PackedScene" uid="uid://b531f8nnnxitf" path="res://scenes/hud.tscn" id="4_2dhek"]
 
 [sub_resource type="Curve2D" id="Curve2D_466k2"]
@@ -14,6 +15,15 @@ point_count = 5
 [node name="Main" type="Node"]
 script = ExtResource("1_dgcv3")
 mob_scene = ExtResource("2_4ae4r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.733333, 0.733333, 0.733333, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_q7rky")
 
 [node name="Player" parent="." instance=ExtResource("2_wu7rv")]
 
