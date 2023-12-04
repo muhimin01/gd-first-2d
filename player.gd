@@ -2,11 +2,12 @@ extends Area2D
 
 @export var speed = 400 # How fast the player will move
 var screen_size # Size of the game windows
+signal hit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-
+	hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -37,3 +38,13 @@ func _process(delta):
 
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+
+func _on_body_entered(body):
+	hide() # Player dissapears after being hit
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true) # Must be deferred as physics properties on a physics callback is unmodifiable.
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
